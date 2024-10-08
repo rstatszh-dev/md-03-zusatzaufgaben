@@ -23,7 +23,7 @@ Alle Übungen in dieser Aufgabe verwenden die `penguins` Daten als Ausgangspunkt
 2.  Führe den Codeabschnitt aus, der `glimpse(penguins)` enthält.
 3.  Wie viele Variablen sind in dem Datensatz?
 4.  Wie viele Beobachtungen sind in dem Datensatz enthalten?
-5.  Welche Datentypen sind in den Variablen enthalten?  (Reminder: [rstatszh-k009.github.io/website/folien/md-02-datenvisualisierung.html#/arten-von-variablen](https://rstatszh-k009.github.io/website/folien/md-02-datenvisualisierung.html#/arten-von-variablen){.uri})
+5.  Welche Datentypen sind in den Variablen enthalten? (Reminder: [rstatszh-k009.github.io/website/folien/md-02-datenvisualisierung.html#/arten-von-variablen](https://rstatszh-k009.github.io/website/folien/md-02-datenvisualisierung.html#/arten-von-variablen){.uri})
 
 ```{r}
 glimpse(penguins)
@@ -131,7 +131,6 @@ penguins |>
 
 Beginne mit `penguins`, gruppiere die Daten nach Art (species) und Jahr (year) und erstelle dann eine Übersichtstabelle mit der durchschnittlichen Schnabeltiefe (nenne die Spalte `bill_depth_mean`), der durchschnittlichen Schnabellänge (nenne die Spalte: `bill_length_mean`) und der Anzahl für jede Gruppe. Wie gehst du mit NA-Werten um?
 
-
 ```{r}
 
 penguins |> 
@@ -162,7 +161,6 @@ penguins |>
 
 Nutze `filter()`, um eine Teilmenge aus `penguins` zu erstellen, die Beobachtungen für weibliche Pinguine enthält, die auf den Torgersen- und Biscoe-Inseln aufgezeichnet wurden. Verwende dann den Pipe-Operator `|>` und `count()`, um zu überprüfen, ob du den richtigen Code geschrieben hast.
 
-
 ```{r}
 penguins |> 
   filter(sex == "male", island %in% c("Dream", "Biscoe")) |> 
@@ -171,8 +169,8 @@ penguins |>
 
 ## Aufageb 4: Daten kommunizieren
 
-1. In the YAML header (between the three dashes at the top of the document), add your name as the author of this document.
+1.  In the YAML header (between the three dashes at the top of the document), add your name as the author of this document.
 
-2. Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben.
+2.  Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben.
 
-3. Kehre nun zurück zur Kurswebseite und folge den Schritten um deine lokalen Veränderung mit GitHub zu syncronisieren.
+3.  Kehre nun zurück zur Kurswebseite und folge den Schritten um deine lokalen Veränderung mit GitHub zu syncronisieren.
