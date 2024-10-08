@@ -19,11 +19,11 @@ library(dplyr)
 
 Alle Übungen in dieser Aufgabe verwenden die `penguins` Daten als Ausgangspunkt.
 
-1.  Führen Sie alle obigen Code-Bausteine aus.
+1.  Führe den obigen Code-Block aus.
 2.  Führe den Codeabschnitt aus, der `glimpse(penguins)` enthält.
 3.  Wie viele Variablen sind in dem Datensatz?
 4.  Wie viele Beobachtungen sind in dem Datensatz enthalten?
-5.  Welche Datentypen sind in den Variablen enthalten? (Reminder: [rstatszh-k009.github.io/website/folien/md-02-datenvisualisierung.html#/arten-von-variablen](https://rstatszh-k009.github.io/website/folien/md-02-datenvisualisierung.html#/arten-von-variablen){.uri})
+5.  Welche Datentypen sind in den Variablen enthalten? (Als Erinnerung: [rstatszh-k009.github.io/website/folien/md-02-datenvisualisierung.html#/arten-von-variablen](https://rstatszh-k009.github.io/website/folien/md-02-datenvisualisierung.html#/arten-von-variablen){.uri})
 
 ```{r}
 glimpse(penguins)

@@ -13,20 +13,19 @@ editor_options:
 ---
 
 ```{r}
-library(palmerpenguins)
-library(dplyr)
+
 ```
 
 Alle Übungen in dieser Aufgabe verwenden die `penguins` Daten als Ausgangspunkt.
 
-1.  Führen Sie alle obigen Code-Bausteine aus.
+1.  Führe den obigen Code-Block aus.
 2.  Führe den Codeabschnitt aus, der `glimpse(penguins)` enthält.
 3.  Wie viele Variablen sind in dem Datensatz?
 4.  Wie viele Beobachtungen sind in dem Datensatz enthalten?
-5.  Welche Datentypen sind in den Variablen enthalten? (Reminder: [rstatszh-k009.github.io/website/folien/md-02-datenvisualisierung.html#/arten-von-variablen](https://rstatszh-k009.github.io/website/folien/md-02-datenvisualisierung.html#/arten-von-variablen){.uri})
+5.  Welche Datentypen sind in den Variablen enthalten? (Als Erinnerung: [rstatszh-k009.github.io/website/folien/md-02-datenvisualisierung.html#/arten-von-variablen](https://rstatszh-k009.github.io/website/folien/md-02-datenvisualisierung.html#/arten-von-variablen){.uri})
 
 ```{r}
-glimpse(penguins)
+
 ```
 
 ## Aufgabe 1: Daten eingrenzen mit `filter()`
@@ -34,65 +33,55 @@ glimpse(penguins)
 Verwende `filter()`, um eine Teilmenge aus `penguins` zu erstellen, die nur Beobachtungen für Adelie Pinguine enthält.
 
 ```{r}
-penguins |> 
-  filter(species == "Adelie")
+
 ```
 
 Verwende `filter()`, um eine Teilmenge aus `penguins` zu erstellen, die nur Beobachtungen enthält, bei denen die Körpermasse kleiner oder gleich 2900 g ist.
 
 ```{r}
-penguins |> 
-  filter(body_mass_g <= 2900)
+
 ```
 
 Verwende `filter()`, um eine Teilmenge aus `penguins` zu erstellen, die nur Beobachtungen für Adeliepinguine mit einer Schnabellänge von mehr als 40 mm enthält.
 
 ```{r}
-penguins |> 
-  filter(species == "Adelie" & bill_length_mm > 40)
+
 ```
 
 Verwende `filter()`, um eine Teilmenge aus `penguins` zu erstellen, die keine Beobachtungen für Chinstrap Pinguine enthält.
 
 ```{r}
-penguins |> 
-  filter(species != "Chinstrap")
+
 ```
 
 Verwende `filter()`, um eine Teilmenge aus `penguins` zu erstellen, die nur Gentoo Pinguine mit einer Schnabeltiefe von mindestens 15.5 Millimetern enthält.
 
 ```{r}
-penguins |> 
-  filter(species == "Gentoo" & bill_depth_mm >= 15.5)
+
 ```
 
 Verwende `filter()`, um eine Teilmenge aus `penguins` zu erstellen, die Beobachtungen für männliche Pinguine enthält, die auf den Dream- und Biscoe-Inseln aufgezeichnet wurden.
 
 ```{r}
-penguins |> 
-  filter(sex == "male", island %in% c("Dream", "Biscoe")) 
+
 ```
 
 Verwende `filter()`, um eine Teilmenge aus `penguins` zu erstellen, die Beobachtungen für weibliche Adelie Pinguine mit einer Schnabellänge von weniger als 35 mm enthält.
 
 ```{r}
-penguins |> 
-  filter(sex == "female", species == "Adelie", bill_length_mm < 35)
+
 ```
 
 Verwende `filter()`, um eine Teilmenge aus `penguins` zu erstellen, die Beobachtungen für weibliche Chinstrap Pinguine auf den Dream- und Torgersen-Inseln enthält.
 
 ```{r}
-penguins |> 
-  filter(sex == "female", species == "Chinstrap", 
-         island %in% c("Dream", "Torgersen"))
+
 ```
 
 Verwende `filter()`, um eine Teilmenge aus `penguins` zu erstellen, die entweder Gentoo Pinguine enthält ODER Pinguine mit einer Körpermasse von mehr als 4500 g.
 
 ```{r}
-penguins |> 
-  filter(species == "Gentoo" | body_mass_g > 4500)
+
 ```
 
 ## Aufgabe 2: Hinzufügen neuer Spalten mit `mutate()`
@@ -100,22 +89,19 @@ penguins |>
 Füge eine Spalte zu `penguins` mit dem Namen `flipper_m` enthält hinzu, welche `flipper_length_mm` (Flipperlänge in Millimetern) in der Einheit von Meter umgerechnet enthält.
 
 ```{r}
-penguins |> 
-  mutate(flipper_m = flipper_length_mm / 1000)
+
 ```
 
 Füge eine Spalte zu `penguins` mit dem Namen `body_mass_kg` hinzu, die `body_mass_g` (Körpermasse in Gramm) in Kilogramm umgerechnet enthält.
 
 ```{r}
-penguins |> 
-  mutate(body_mass_kg = body_mass_g / 1000)
+
 ```
 
 Füge eine neue Spalte zu `penguins` hinzu, die eine neue Spalte `bill_ratio` enthält, die das Verhältnis von Schnabellänge zu Schnabeltiefe enthält.
 
 ```{r}
-penguins |> 
-  mutate(bill_ratio = bill_length_mm / bill_depth_mm)
+
 ```
 
 ## Aufgabe 3: Zusammenfassen von Daten mit `group_by()` & `summarize()` & `count()`
@@ -123,48 +109,31 @@ penguins |>
 Beginne mit `penguins`, gruppiere die Daten nach Art (species) und erstelle dann eine Übersichtstabelle mit der maximalen und minimalen Länge der Flossen (nenne die neuen Spalten `flip_max` und `flip_min`). Wie gehst du mit NA-Werten um?
 
 ```{r}
-penguins |> 
-  group_by(species) |> 
-  summarize(flip_max = max(flipper_length_mm, na.rm = TRUE), 
-            flip_min = min(flipper_length_mm, na.rm = TRUE))
+
 ```
 
 Beginne mit `penguins`, gruppiere die Daten nach Art (species) und Jahr (year) und erstelle dann eine Übersichtstabelle mit der durchschnittlichen Schnabeltiefe (nenne die Spalte `bill_depth_mean`), der durchschnittlichen Schnabellänge (nenne die Spalte: `bill_length_mean`) und der Anzahl für jede Gruppe. Wie gehst du mit NA-Werten um?
 
 ```{r}
 
-penguins |> 
-  filter(!is.na(bill_depth_mm), !is.na(bill_length_mm)) |>
-  group_by(species, year) |> 
-  summarize(bill_depth_mean = mean(bill_depth_mm), 
-            bill_length_mean = mean(bill_length_mm),
-            count = n())
-
-
 ```
 
 Nutze die Funktion `count()`, um die Anzahl der Beobachtungen für jede Art in `penguins` zu zählen.
 
 ```{r}
-penguins |> 
-  count(species)
+
 ```
 
 Nutze die Funktion `count()`, um die Anzahl der Beobachtungen für jede Art auf jeder Insel in `penguins` zu zählen.
 
 ```{r}
 
-penguins |> 
-  count(species, island)
-
 ```
 
 Nutze `filter()`, um eine Teilmenge aus `penguins` zu erstellen, die Beobachtungen für weibliche Pinguine enthält, die auf den Torgersen- und Biscoe-Inseln aufgezeichnet wurden. Verwende dann den Pipe-Operator `|>` und `count()`, um zu überprüfen, ob du den richtigen Code geschrieben hast.
 
 ```{r}
-penguins |> 
-  filter(sex == "male", island %in% c("Dream", "Biscoe")) |> 
-  count(sex, island)
+
 ```
 
 ## Aufageb 4: Daten kommunizieren
