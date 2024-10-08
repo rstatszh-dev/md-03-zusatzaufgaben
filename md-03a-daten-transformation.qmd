@@ -13,7 +13,8 @@ editor_options:
 ---
 
 ```{r}
-
+library(palmerpenguins)
+library(dplyr)
 ```
 
 Alle Übungen in dieser Aufgabe verwenden die `penguins` Daten als Ausgangspunkt.
