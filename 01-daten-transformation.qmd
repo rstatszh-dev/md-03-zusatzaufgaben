@@ -137,7 +137,28 @@ Nutze `filter()`, um eine Teilmenge aus `penguins` zu erstellen, die Beobachtung
 
 ```
 
-## Aufageb 4: Daten kommunizieren
+## Aufgabe 4: Environment
+
+In allen obigen Aufgaben hast du Code geschrieben, um die `penguins`-Daten zu transformieren. Die Ergebnisse erschienen in der Console, wurden aber nirgendwo gespeichert.
+
+Der folgende Code-Block verhält sich anders. Führe ihn aus und beobachte, was im Environment-Fenster (oberes rechtes Fenster in RStudio) passiert.
+
+```{r}
+penguins_flipper_sum <- penguins |>
+  group_by(species) |>
+  summarize(flip_max = max(flipper_length_mm, na.rm = TRUE),
+            flip_min = min(flipper_length_mm, na.rm = TRUE))
+```
+
+Nach dem Ausführen des Codes:
+
+1.  Welches neue Objekt erscheint in deinem Environment?
+
+2.  Was ist der Unterschied zwischen diesem Code und den vorherigen Code-Blöcken?
+
+3.  Warum würden wir den Zuweisungsoperator `<-` verwenden, um unsere Ergebnisse zu speichern?
+
+## Aufgabe 5: Daten kommunizieren
 
 1.  In the YAML header (between the three dashes at the top of the document), add your name as the author of this document.
 
